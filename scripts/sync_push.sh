@@ -5,7 +5,7 @@ REPO_NAME="synch_github_gitlab"
 GITHUB_USER="<VotreNomUtilisateurGitHub>"
 GITHUB_URL="git@github.com:$GITHUB_USER/$REPO_NAME.git"
 GITLAB_USER="<VotreNomUtilisateurGitLab>"
-GITLAB_URL="git@gitlab.info.uqam.ca:$GITLAB_USER/$REPO_NAME.git"
+GITLAB_URL="git@gitlab.com:$GITLAB_USER/$REPO_NAME.git"
 BRANCH="main"  # Changez par le nom de votre branche si ce n'est pas 'main'
 
 # Vérifie si le répertoire est un dépôt Git

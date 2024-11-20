@@ -1,5 +1,5 @@
 #!/bin/bash
-
+#
 # Variables
 REPO_NAME="synch_github_gitlab"
 GITHUB_USER="GYOM15"

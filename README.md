@@ -11,11 +11,39 @@ Ce projet propose une solution automatisée pour gérer et synchroniser vos dép
 
 ## Fonctionnalités
 
-1. Vérification ou Initialisation du Dépôt Git Local
-2. Création Automatique des Dépôts GitHub et GitLab si Inexistants
-3. Ajout ou Mise à Jour des Remotes pour GitHub et GitLab
-4. Vérification de la présence d’au moins un commit avant de pousser les modifications sur les deux dépôts
-5. Poussée des Modifications Locales sur les Deux Plateformes
+## Fonctionnalités
+
+1. **Vérification ou Initialisation du Dépôt Git Local**
+2. **Ajout interactif des fichiers modifiés** :
+   - Les fichiers modifiés ou non suivis sont affichés de manière claire dans une table conviviale.
+   - L'utilisateur peut sélectionner individuellement les fichiers à ajouter au commit, avec validation des sélections.
+
+3. **Synchronisation avec GitHub et GitLab**
+4. **Création de branches distantes si nécessaire** :
+   - Le script vérifie l'existence des branches sur les dépôts distants.
+   - Si une branche n'existe pas, l'utilisateur est invité à confirmer sa création.
+   - Les sélections non valides (ex. : numéro hors de la liste) sont ignorées avec un message d'avertissement.
+
+5. **Gestion des commits personnalisés**
+
+## 📂 **Affichage convivial des fichiers modifiés**
+
+Les fichiers modifiés sont affichés dans une table bien formatée, facilitant la sélection. Exemple :
+
+```
+📂 Des fichiers non suivis ou des modifications détectées.
+Voici la liste des fichiers modifiés :
+
+┌──────┬─────────────────────────────┐
+│ Index │ Fichiers modifiés           │
+├──────┼─────────────────────────────┤
+│ 1     │ fichier1.txt               │
+│ 2     │ script.sh                  │
+│ 3     │ README.md                  │
+└──────┴─────────────────────────────┘
+```
+
+Selectionner ensuite sélectionner les fichiers à inclure dans le commit en entrant les numéros correspondants.
 
 ---
 
@@ -63,7 +91,10 @@ Rassurer vous d'avoir le script à la racine du projet
    ssh-add ~/.ssh/id_github
    ssh-add ~/.ssh/id_gitlab
    ```
-- Sans oublier d'ajouter les clé SSH publiques à vos comptes GitHub et GitLab.
+- Ajouter les clés SSH publiques à vos comptes GitHub et GitLab :
+     ```bash
+     cat ~/.ssh/id_github.pub
+     cat ~/.ssh/id_gitlab.pub
 
 ---
 ## Étape 2 : Editer le fichier de configuration 
@@ -94,9 +125,17 @@ Rassurer vous d'avoir le script à la racine du projet
 	- REPO_NAME, GITHUB_USER, GITLAB_USER.
 
 4.	Rendez le script exécutable : 
-      ```bash
-      chmod +x script_push.sh
-      ```
+   ### Rendre le script exécutable (pour l'utilisateur ou le groupe) :
+   ```bash
+   chmod u+x script_push.sh  # Pour l'utilisateur uniquement
+   chmod g+x script_push.sh  # Pour le groupe
+   ```
+
+   ### Exécuter le script directement sans modification de permissions :
+   ```bash
+   bash script_push.sh
+   ```
+
 ## Étape 4 : Exécuter le Script
 
 1. Lancez le script :

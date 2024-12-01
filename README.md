@@ -35,11 +35,11 @@ Les fichiers modifiés sont affichés dans une table bien formatée, facilitant 
 Voici la liste des fichiers modifiés :
 
 ┌──────┬─────────────────────────────┐
-│ Index │ Fichiers modifiés           │
+│ Index│ Fichiers modifiés           │
 ├──────┼─────────────────────────────┤
-│ 1     │ fichier1.txt               │
-│ 2     │ script.sh                  │
-│ 3     │ README.md                  │
+│ 1    │ fichier1.txt                │
+│ 2    │ script.sh                   │
+│ 3    │ README.md                   │
 └──────┴─────────────────────────────┘
 ```
 
